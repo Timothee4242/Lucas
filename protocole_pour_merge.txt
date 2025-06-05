@@ -1,0 +1,31 @@
+PROTOCOLE POUR MERGE :
+
+1. git checkout main                            -- va dans la branche main
+
+2. git pull                                     -- récupère les modification de main
+
+3. git checkout -b nom-de-nouvelle-branche      -- crée une nouvelle branche temporaire
+
+4. git add .                                    |
+                                                | ajoute les modifications locales dans la nouvelle branche
+5. git commit -m "modifications"                |
+
+6. git checkout main                            -- retourne dans main
+
+7. git merge nom-de-nouvelle-branche            -- associe les modifications des deux branches
+
+8. git push                                     -- renvoie dans main
+
+
+ATTENTION : toujours créer une NOUVELLE branche
+
+____________________________________________________________________________________________________________________
+
+
+Pour supprimer une branche : 
+8. git branch -d branche-a-supprimer
+
+ATTENTION : NE JAMAIS UTILISER CETTE COMMANDE POUR MAIN
+
+Si jamais, utiliser cette commande pour la restaurer :
+9. git checkout -b main origin/main
