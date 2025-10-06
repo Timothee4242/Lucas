@@ -18,7 +18,7 @@ while True:
         pa.write("git add .\ngit commit -m")
         while not kb.is_pressed("enter"):pass
         pa.write("git push\n", 0.005)
-    elif kb.is_pressed("alt+f4"): break #action == "Stop": break
+    elif kb.is_pressed("alt+f4") or kb.is_pressed("ctrl+alt+suppr") or kb.is_pressed("ctrl+alt+shift+s+q"): break #action == "Stop": break
     elif kb.is_pressed("ctrl+alt+p"):
         while kb.is_pressed("ctrl") or kb.is_pressed("alt"): pass
         pa.write("git pull", 0.01)
