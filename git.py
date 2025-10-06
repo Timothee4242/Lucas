@@ -32,7 +32,9 @@ while True:
         pa.write(f"git checkout {b}\ngit merge temp\ngit pull\ni", 0.001)
         while not kb.is_pressed("esc"):pass
         while kb.is_pressed("esc"):pass
-        pa.write(":wq\ngit push\ngit branch -d temp\n")
+        while not kb.is_pressed("enter"):pass
+        while kb.is_pressed("enter"):pass
+        pa.write("wq\ngit push\ngit branch -d temp\n")
 
 
    # print(kb._pressed_events.keys())
