@@ -7,7 +7,7 @@ time.sleep(1)
 pa.write("git fetch -a\ngit status\n")
 while True:
     #action = pa.confirm('Enter option.', buttons=['See modifications', 'Commit', 'Merge', "Stop"])
-    if kb.is_pressed("ctrl+alt+m"): #action == 'See modifications':
+    if kb.is_pressed("ctrl+alt+d"): #action == 'See modifications':
         while kb.is_pressed("ctrl") or kb.is_pressed("alt"): pass
         b = pa.prompt('Wich branch?')
         if b in (""," "): b = "Tests"
@@ -29,7 +29,9 @@ while True:
         if b in (""," "): b = "Tests"
         pa.write("git pull\ngit checkout -b temp\ngit add .\ngit commit -m", 0.001)
         while not kb.is_pressed("enter"):pass
-        pa.write(f"git checkout {b}\ngit merge temp\ngit push", 0.001)
+        pa.write(f"git checkout {b}\ngit merge temp\ngit pull\ni", 0.001)
+        while not kb.is_pressed("esc"):pass
+        pa.write(":wq\ngit push\ngit branch -d temp\n")
 
 
    # print(kb._pressed_events.keys())
